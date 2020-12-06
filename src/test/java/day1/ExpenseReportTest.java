@@ -28,4 +28,26 @@ public class ExpenseReportTest {
         assertEquals(Integer.valueOf(514579), result);
     }
 
+    @Test
+    public void result2Day1Test(){
+        ExpenseReport expenseReport = new ExpenseReport();
+        List<Integer> exampleNumbers = Arrays.asList(1721,
+                979,
+                366,
+                299,
+                675,
+                1456);
+        Integer resultExample = expenseReport.result2Day1(exampleNumbers);
+        System.out.println(resultExample);
+        assertEquals(Integer.valueOf(241861950), resultExample);
+
+
+        List<Integer> expenseList = InputReader.inputFileToAList();
+        Integer result = expenseReport.result2Day1(expenseList);
+        System.out.println(result);
+        System.out.println(expenseReport.result2Day1(InputReader.inputFileToAList()));
+
+
+    }
+
 }
