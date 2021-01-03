@@ -1,0 +1,16 @@
+package day5;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class BoardingPassReaderTest {
+
+    @Test
+    public void checkIfReaderWorks(){
+        BoardingPassReader boardingPassReader = new BoardingPassReader();
+        String filename = "day5/boardingPasses";
+        System.out.println(boardingPassReader.readBoardingPassesFromFile(filename));
+
+    }
+}
