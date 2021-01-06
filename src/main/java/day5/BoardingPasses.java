@@ -1,6 +1,7 @@
 package day5;
 
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -89,10 +90,41 @@ public class BoardingPasses {
              this.maxColumnNumber = 7;
              this.seatNumber = 0;
 
+
         }
 
         System.out.println(seats);
+
         return Collections.max(seats);
+    }
+
+    public Integer findMySeat(List<String> passes){
+        List<Integer> allSeats = new ArrayList<>();
+        for(String seatNumber : passes){
+            Integer foundSeat = findSeat(seatNumber);
+            allSeats.add(foundSeat);
+            this.maxNumberRow = 127;
+            this.minNumberRow = 0;
+            this.newRowMaxNumber = 0;
+            this.minColumnNumber = 0;
+            this.maxColumnNumber = 7;
+            this.seatNumber = 0;
+        }
+        Collections.sort(allSeats);
+        System.out.println(allSeats);
+        List<Integer> helperList = new ArrayList<>();
+        for (int i =70; i <=826; i++){
+            helperList.add(i);
+
+        }
+        System.out.println(helperList);
+        helperList.removeAll(allSeats);
+        allSeats.removeAll(helperList);
+
+        System.out.println(allSeats);
+        System.out.println(helperList);
+        return helperList.get(0);
+
     }
 
 }

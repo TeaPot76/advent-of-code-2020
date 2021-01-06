@@ -56,6 +56,8 @@ public class BoardingPassesTest {
         String fileName = "day5/boardingPasses";
         List<String> allPasses = boardingPassReader.readBoardingPassesFromFile(fileName);
         System.out.println(boardingPasses.checkEachBoardingPassForHighestSeatId(allPasses));
+        boardingPasses = new BoardingPasses();
+        System.out.println(boardingPasses.findMySeat(allPasses));
     }
 
 }
