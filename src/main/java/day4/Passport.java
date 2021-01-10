@@ -51,7 +51,6 @@ public class Passport {
         if (valueOfHcl.matches("^#[0-9a-f]{6}$")) {
             return true;
         } else {
-
             return false;
         }
     }

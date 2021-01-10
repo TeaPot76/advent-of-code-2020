@@ -2,11 +2,10 @@ package day4;
 
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class PassportReaderTest {
