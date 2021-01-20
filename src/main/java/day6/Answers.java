@@ -25,4 +25,39 @@ public class Answers {
         }
         return uniqueAnswers.size();
     }
+
+    public int countTheSameAnswersForGroup(List<String> groupAnswers) {
+        Set<Character> uniqueAnswers = new HashSet<>();
+        int answerCount = 0;
+        for (String answer : groupAnswers) {
+            for (char oneAnswer : answer.toCharArray()) {
+                uniqueAnswers.add(oneAnswer);
+            }
+        }
+        for (char unique : uniqueAnswers){
+            boolean toAdd = true;
+            for (String answer : groupAnswers){
+                if (!answer.contains(String.valueOf(unique))) {
+                    toAdd = false;
+                    break;
+                }
+            }
+            if (toAdd){
+                answerCount ++;
+            }
+        }
+        return answerCount;
+
+    }
+
+    public int countYesAnswersForAllGroups(List<List<String>> allAnswers) {
+        int counter = 0;
+        for (List<String> answersList : allAnswers) {
+            int numberOfAnswersForGroup = countTheSameAnswersForGroup(answersList);
+            counter += numberOfAnswersForGroup;
+        }
+        return counter;
+    }
+
+
 }
