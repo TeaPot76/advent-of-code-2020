@@ -2,7 +2,7 @@ package day7;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 public class BagRulesInputReaderTest {
 
@@ -10,7 +10,9 @@ public class BagRulesInputReaderTest {
     public void checkIfInputReader(){
         String fileName = "day7/bagsRulesInput";
         BagRulesInputReader bagRulesInputReader = new BagRulesInputReader();
-        System.out.println(bagRulesInputReader.readBagRulesInput(fileName));
+        List<String> allRules = bagRulesInputReader.readBagRulesInput(fileName);
+        System.out.println(allRules.get(0));
+        System.out.println(allRules.get(1));
     }
 
 }
